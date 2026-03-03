@@ -47,8 +47,9 @@ const workItems = [
 <BaseLayout title="Home" description="Christine Burke Yoga — Yoga, Breathwork & Holistic Wellness.">
   <!-- HERO — Grá style: full viewport, asymmetric, art-directed -->
   <section class="min-h-screen relative flex flex-col justify-end overflow-hidden">
-    <!-- Large hero image — center stage like Grá artwork -->
-    <div class="absolute inset-0 flex items-end justify-center px-[10%] sm:px-[15%] md:px-[20%] pb-[38%] md:pb-[15%]">
+    <!-- Large hero image — absolute on md+, flows on mobile -->
+    <!-- Desktop: absolute positioned, center-right -->
+    <div class="hidden md:flex absolute inset-0 items-center justify-center px-[20%] pb-[15%]">
       <img
         src={`${base}assets/ingested/christine-1.jpg`}
         alt="Christine Burke"
@@ -56,9 +57,18 @@ const workItems = [
         loading="eager"
       />
     </div>
+    <!-- Mobile: flows naturally, positioned right like Grá -->
+    <div class="md:hidden flex justify-end pt-48 pr-6">
+      <img
+        src={`${base}assets/ingested/christine-1.jpg`}
+        alt="Christine Burke"
+        class="w-[65%] h-auto object-cover mix-blend-multiply opacity-90"
+        loading="eager"
+      />
+    </div>
 
     <!-- Brand name — large serif, bottom-left like Grá -->
-    <div class="relative z-10 page-pad pb-8">
+    <div class="relative z-10 page-pad pb-8 mt-auto">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
         <div>
           <h1 class="display text-[clamp(4rem,10vw,9rem)] leading-[0.9] tracking-tight">
