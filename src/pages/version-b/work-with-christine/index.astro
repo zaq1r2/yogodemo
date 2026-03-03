@@ -2,7 +2,6 @@
 import BaseLayout from '../../../version-b/layouts/BaseLayout.astro';
 import EyebrowLabel from '../../../version-b/components/EyebrowLabel.astro';
 import BackLink from '../../../version-b/components/BackLink.astro';
-import Button from '../../../version-b/components/Button.astro';
 import Section from '../../../version-b/components/Section.astro';
 
 const base = import.meta.env.BASE_URL;
@@ -15,8 +14,6 @@ const vb = `${base}version-b/`;
     <EyebrowLabel text="Work with Christine" class="mb-space-2" />
     <h1 class="mb-space-4">How to Practice<br />with Christine</h1>
   </Section>
-
-  <hr class="rule content-col" />
 
   <!-- Private Sessions -->
   <Section id="private">
@@ -37,11 +34,9 @@ const vb = `${base}version-b/`;
       </p>
     </div>
     <div class="mt-space-3">
-      <Button href={`${vb}contact/`} variant="outline">Book a Session</Button>
+      <a href={`${vb}contact/`} class="nav-link hover-underline">Book a Session</a>
     </div>
   </Section>
-
-  <hr class="rule content-col" />
 
   <!-- Classes -->
   <Section id="classes">
@@ -84,8 +79,6 @@ const vb = `${base}version-b/`;
     </p>
   </Section>
 
-  <hr class="rule content-col" />
-
   <!-- Corporate -->
   <Section id="corporate">
     <EyebrowLabel text="Corporate & Schools" class="mb-space-2" />
@@ -93,6 +86,6 @@ const vb = `${base}version-b/`;
     <p class="text-muted max-w-[60ch] mb-4">
       Christine has been the mindfulness and yoga teacher at Marlborough School since 2012 and served as yoga consultant for Eddie Bauer. Custom programs for groups of all sizes — stress management, breathwork, mindfulness, and wellness education.
     </p>
-    <Button href={`${vb}contact/`} variant="text">Inquire about programs &rarr;</Button>
+    <a href={`${vb}contact/`} class="nav-link hover-underline">Inquire about programs</a>
   </Section>
 </BaseLayout>

@@ -4,51 +4,22 @@ const base = import.meta.env.BASE_URL;
 const vb = `${base}version-b/`;
 ---
 
-<footer class="mt-auto">
-  <!-- Newsletter -->
-  <section class="content-col py-space-5 text-center">
-    <hr class="rule mb-space-5" />
-    <p class="eyebrow mb-space-2">Newsletter</p>
-    <p class="text-lg mb-6">Stay connected with Christine</p>
-    <p class="text-sm text-muted mb-2">Newsletter signup coming soon</p>
-    <div class="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
-      <input
-        type="email"
-        placeholder="Your email"
-        disabled
-        aria-label="Email (placeholder)"
-        class="flex-1 px-4 py-2.5 text-sm bg-transparent border border-border rounded-none focus:outline-none focus:border-fg"
-      />
-      <button disabled class="px-5 py-2.5 text-sm border border-fg text-fg bg-transparent cursor-not-allowed">
-        Subscribe
-      </button>
+<footer class="mt-auto container-wide pb-10 pt-space-5">
+  <div class="max-w-3xl">
+    <div class="flex flex-col gap-1 mb-space-4">
+      <a href={`${vb}work-with-christine/`} class="nav-link hover-underline">Work with Christine</a>
+      <a href={`${vb}programs/`} class="nav-link hover-underline">Programs</a>
+      <a href={`${vb}events/`} class="nav-link hover-underline">Events</a>
+      <a href={`${vb}books-press/`} class="nav-link hover-underline">Books & Press</a>
+      <a href={`${vb}about/`} class="nav-link hover-underline">About</a>
+      <a href={`${vb}liberation-yoga/`} class="nav-link hover-underline">Liberation Yoga Legacy</a>
+      <a href={`${vb}contact/`} class="nav-link hover-underline">Contact</a>
     </div>
-  </section>
 
-  <!-- Links -->
-  <div class="content-col py-space-4">
-    <hr class="rule mb-space-4" />
-    <div class="flex flex-col sm:flex-row justify-between gap-6 text-sm">
-      <div class="flex flex-wrap gap-x-4 gap-y-1 text-muted">
-        <a href={`${vb}work-with-christine/`} class="hover-underline">Work with Christine</a>
-        <a href={`${vb}programs/`} class="hover-underline">Programs</a>
-        <a href={`${vb}events/`} class="hover-underline">Events</a>
-        <a href={`${vb}books-press/`} class="hover-underline">Books</a>
-        <a href={`${vb}about/`} class="hover-underline">About</a>
-        <a href={`${vb}contact/`} class="hover-underline">Contact</a>
-      </div>
-      <div class="flex flex-wrap gap-x-4 gap-y-1 text-muted">
-        <a href={`${vb}liberation-yoga/`} class="hover-underline">Liberation Yoga Legacy</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bottom -->
-  <div class="content-col pb-8">
-    <hr class="rule mb-6" />
-    <div class="flex flex-col sm:flex-row justify-between gap-2 text-xs text-muted">
+    <div class="flex flex-col sm:flex-row sm:items-center gap-3 text-xs text-muted">
       <p>&copy; {new Date().getFullYear()} {site.name}</p>
-      <div class="flex gap-3">
+      <span class="hidden sm:inline">&middot;</span>
+      <div class="flex gap-4">
         {site.socials.instagram && <a href={site.socials.instagram} class="hover-underline" target="_blank" rel="noopener">Instagram</a>}
         {site.socials.facebook && <a href={site.socials.facebook} class="hover-underline" target="_blank" rel="noopener">Facebook</a>}
         {site.socials.youtube && <a href={site.socials.youtube} class="hover-underline" target="_blank" rel="noopener">YouTube</a>}

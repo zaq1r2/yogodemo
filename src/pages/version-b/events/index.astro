@@ -3,7 +3,6 @@ import BaseLayout from '../../../version-b/layouts/BaseLayout.astro';
 import EyebrowLabel from '../../../version-b/components/EyebrowLabel.astro';
 import EditorialList from '../../../version-b/components/EditorialList.astro';
 import BackLink from '../../../version-b/components/BackLink.astro';
-import Button from '../../../version-b/components/Button.astro';
 import Section from '../../../version-b/components/Section.astro';
 import events from '../../../content/events.json';
 
@@ -39,8 +38,6 @@ const pastItems = past.map((e) => ({
     <h1 class="mb-space-4">Workshops, Retreats<br />&amp; Programs</h1>
   </Section>
 
-  <hr class="rule content-col" />
-
   <!-- Upcoming -->
   <Section id="upcoming">
     <EyebrowLabel text={`Upcoming (${upcoming.length})`} class="mb-space-3" />
@@ -50,8 +47,6 @@ const pastItems = past.map((e) => ({
       <EditorialList items={upcomingItems} />
     )}
   </Section>
-
-  <hr class="rule content-col" />
 
   <!-- Past -->
   <Section id="past">
@@ -65,10 +60,10 @@ const pastItems = past.map((e) => ({
     )}
   </Section>
 
-  <div class="content-col pb-4">
+  <Section class="pt-0">
     <p class="text-xs text-muted">
       Source: <a href="https://www.liberationyoga.com/workshops" class="hover-underline" target="_blank" rel="noopener">liberationyoga.com</a>,
       <a href="https://www.christineburkeyoga.com/retreats-events" class="hover-underline" target="_blank" rel="noopener">christineburkeyoga.com</a>
     </p>
-  </div>
+  </Section>
 </BaseLayout>

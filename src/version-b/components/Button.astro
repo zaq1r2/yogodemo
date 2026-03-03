@@ -1,17 +1,11 @@
 ---
 interface Props {
   href: string;
-  variant?: 'outline' | 'text';
   class?: string;
 }
-const { href, variant = 'outline', class: className = '' } = Astro.props;
-
-const styles = {
-  outline: 'px-5 py-2.5 text-sm border border-fg hover:bg-fg hover:text-bg transition-colors duration-200',
-  text: 'text-sm hover-underline',
-};
+const { href, class: className = '' } = Astro.props;
 ---
 
-<a href={href} class:list={[styles[variant], className]}>
+<a href={href} class:list={['nav-link hover-underline', className]}>
   <slot />
 </a>

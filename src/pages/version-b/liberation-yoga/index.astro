@@ -2,7 +2,6 @@
 import BaseLayout from '../../../version-b/layouts/BaseLayout.astro';
 import EyebrowLabel from '../../../version-b/components/EyebrowLabel.astro';
 import BackLink from '../../../version-b/components/BackLink.astro';
-import Button from '../../../version-b/components/Button.astro';
 import Section from '../../../version-b/components/Section.astro';
 
 const base = import.meta.env.BASE_URL;
@@ -18,16 +17,14 @@ const vb = `${base}version-b/`;
   </Section>
 
   <!-- Studio note -->
-  <div class="content-col py-4">
+  <Section class="pt-0">
     <div class="border border-border px-5 py-4">
       <p class="text-sm text-muted">
         <strong class="text-fg">Note:</strong> Liberation Yoga's brick-and-mortar studio closed in October 2021. Christine continues to offer classes, workshops, retreats, and teacher training.
-        <a href={`${vb}work-with-christine/`} class="hover-underline text-fg">Current offerings &rarr;</a>
+        <a href={`${vb}work-with-christine/`} class="hover-underline text-fg">Current offerings</a>
       </p>
     </div>
-  </div>
-
-  <hr class="rule content-col" />
+  </Section>
 
   <Section>
     <EyebrowLabel text="The Story" class="mb-space-2" />
@@ -43,8 +40,6 @@ const vb = `${base}version-b/`;
       </p>
     </div>
   </Section>
-
-  <hr class="rule content-col" />
 
   <!-- What Made It Special -->
   <Section>
@@ -65,8 +60,6 @@ const vb = `${base}version-b/`;
       <img src={`${base}assets/ingested/liberation-fullsize.jpg`} alt="Liberation Yoga" class="w-full aspect-square object-cover" loading="lazy" />
     </div>
   </Section>
-
-  <hr class="rule content-col" />
 
   <!-- Values -->
   <Section>
@@ -91,8 +84,6 @@ const vb = `${base}version-b/`;
     </div>
   </Section>
 
-  <hr class="rule content-col" />
-
   <!-- Quote -->
   <Section>
     <blockquote class="max-w-[55ch]">
@@ -109,19 +100,17 @@ const vb = `${base}version-b/`;
     </p>
   </Section>
 
-  <hr class="rule content-col" />
-
   <Section>
     <p class="text-muted mb-space-3">The spirit continues through Christine's teaching, books, and community.</p>
     <div class="flex gap-6">
-      <Button href={`${vb}work-with-christine/`} variant="outline">Work with Christine</Button>
-      <Button href={`${vb}events/`} variant="text">Events &rarr;</Button>
+      <a href={`${vb}work-with-christine/`} class="nav-link hover-underline">Work with Christine</a>
+      <a href={`${vb}events/`} class="nav-link hover-underline">Events</a>
     </div>
   </Section>
 
-  <div class="content-col pb-4">
+  <Section class="pt-0">
     <p class="text-xs text-muted">
       Source: <a href="https://www.liberationyoga.com/our-story" class="hover-underline" target="_blank" rel="noopener">liberationyoga.com</a>
     </p>
-  </div>
+  </Section>
 </BaseLayout>

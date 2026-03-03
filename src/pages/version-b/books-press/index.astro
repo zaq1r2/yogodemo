@@ -2,7 +2,6 @@
 import BaseLayout from '../../../version-b/layouts/BaseLayout.astro';
 import EyebrowLabel from '../../../version-b/components/EyebrowLabel.astro';
 import BackLink from '../../../version-b/components/BackLink.astro';
-import Button from '../../../version-b/components/Button.astro';
 import Section from '../../../version-b/components/Section.astro';
 import books from '../../../content/books.json';
 import press from '../../../content/press.json';
@@ -18,32 +17,25 @@ const vb = `${base}version-b/`;
     <h1 class="mb-space-4">Published Works<br />&amp; Media</h1>
   </Section>
 
-  <hr class="rule content-col" />
-
   <!-- Books -->
-  {books.map((book, i) => (
-    <>
-      <Section>
-        <div class="grid md:grid-cols-[auto_1fr] gap-space-4 items-start">
-          <img
-            src={`${base}${book.image.replace(/^\//, '')}`}
-            alt={book.title}
-            class="w-36 md:w-44 aspect-[3/4] object-cover"
-            loading="lazy"
-          />
-          <div>
-            <h2 class="mb-1">{book.title}</h2>
-            <p class="text-sm text-muted mb-4">{book.subtitle}</p>
-            <p class="text-muted max-w-[50ch] mb-space-3">{book.description}</p>
-            <Button href={book.buyUrl} variant="outline">Buy on Amazon</Button>
-          </div>
+  {books.map((book) => (
+    <Section>
+      <div class="grid md:grid-cols-[auto_1fr] gap-space-4 items-start">
+        <img
+          src={`${base}${book.image.replace(/^\//, '')}`}
+          alt={book.title}
+          class="w-36 md:w-44 aspect-[3/4] object-cover"
+          loading="lazy"
+        />
+        <div>
+          <h2 class="mb-1">{book.title}</h2>
+          <p class="text-sm text-muted mb-4">{book.subtitle}</p>
+          <p class="text-muted max-w-[50ch] mb-space-3">{book.description}</p>
+          <a href={book.buyUrl} class="nav-link hover-underline" target="_blank" rel="noopener">Buy on Amazon</a>
         </div>
-      </Section>
-      {i < books.length - 1 && <hr class="rule content-col" />}
-    </>
+      </div>
+    </Section>
   ))}
-
-  <hr class="rule content-col" />
 
   <!-- Review -->
   <Section>
@@ -54,8 +46,6 @@ const vb = `${base}version-b/`;
       <cite class="text-sm not-italic">— Book Review, The Yoga Healer</cite>
     </blockquote>
   </Section>
-
-  <hr class="rule content-col" />
 
   <!-- Press -->
   <Section>

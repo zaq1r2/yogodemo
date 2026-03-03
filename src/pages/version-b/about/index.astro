@@ -2,7 +2,6 @@
 import BaseLayout from '../../../version-b/layouts/BaseLayout.astro';
 import EyebrowLabel from '../../../version-b/components/EyebrowLabel.astro';
 import BackLink from '../../../version-b/components/BackLink.astro';
-import Button from '../../../version-b/components/Button.astro';
 import Section from '../../../version-b/components/Section.astro';
 
 const base = import.meta.env.BASE_URL;
@@ -15,8 +14,6 @@ const vb = `${base}version-b/`;
     <EyebrowLabel text="About" class="mb-space-2" />
     <h1 class="mb-space-4">Christine Burke</h1>
   </Section>
-
-  <hr class="rule content-col" />
 
   <Section>
     <div class="grid md:grid-cols-[1fr_auto] gap-space-4 items-start">
@@ -37,8 +34,6 @@ const vb = `${base}version-b/`;
     </div>
   </Section>
 
-  <hr class="rule content-col" />
-
   <Section>
     <EyebrowLabel text="Credentials" class="mb-space-2" />
     <div class="space-y-4 text-muted max-w-[60ch]">
@@ -50,8 +45,6 @@ const vb = `${base}version-b/`;
       </p>
     </div>
   </Section>
-
-  <hr class="rule content-col" />
 
   <Section>
     <EyebrowLabel text="Approach" class="mb-space-2" />
@@ -77,8 +70,6 @@ const vb = `${base}version-b/`;
     </div>
   </Section>
 
-  <hr class="rule content-col" />
-
   <!-- Awards -->
   <Section>
     <EyebrowLabel text="Recognition" class="mb-space-3" />
@@ -102,16 +93,14 @@ const vb = `${base}version-b/`;
     </div>
   </Section>
 
-  <hr class="rule content-col" />
-
   <Section>
     <p class="text-muted mb-space-3">Learn about the studio Christine and Gary built over nearly two decades.</p>
-    <Button href={`${vb}liberation-yoga/`} variant="text">Liberation Yoga Legacy &rarr;</Button>
+    <a href={`${vb}liberation-yoga/`} class="nav-link hover-underline">Liberation Yoga Legacy</a>
   </Section>
 
-  <div class="content-col pb-4">
+  <Section class="pt-0">
     <p class="text-xs text-muted">
       Source: <a href="https://www.christineburkeyoga.com/bio" class="hover-underline" target="_blank" rel="noopener">christineburkeyoga.com/bio</a>
     </p>
-  </div>
+  </Section>
 </BaseLayout>
