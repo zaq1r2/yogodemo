@@ -1,0 +1,26 @@
+[
+  {
+    "title": "LA Yoga Magazine Cover Feature",
+    "publication": "LA Yoga Magazine",
+    "date": "2019-08",
+    "description": "Christine Burke featured on the cover of LA Yoga Magazine, August/September 2019 issue.",
+    "image": "/assets/ingested/press-layoga-cover.png",
+    "url": "#"
+  },
+  {
+    "title": "The Power of Breath - Award Winner",
+    "publication": "Book Award",
+    "date": "2020",
+    "description": "The Power of Breath received recognition as an award-winning guide to breathwork and wellness.",
+    "image": "/assets/ingested/book-power-breath-award.jpg",
+    "url": "#"
+  },
+  {
+    "title": "Liberation Yoga Featured Studio",
+    "publication": "Yoga Journal",
+    "date": "2018",
+    "description": "Liberation Yoga recognized as one of Los Angeles' most beloved community yoga studios.",
+    "image": "/assets/ingested/liberation-front.jpg",
+    "url": "#"
+  }
+]

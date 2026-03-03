@@ -1,0 +1,26 @@
+[
+  {
+    "title": "The Yoga Healer",
+    "subtitle": "Remedies for the Body, Mind & Spirit from Yoga to Ayurveda",
+    "image": "/assets/ingested/book-yoga-healer.png",
+    "description": "A guide for those who wish to know more about the basic tenets of yoga, Ayurveda, meditation and self-healing. Christine shares her years of practice and study into an accessible daily companion.",
+    "buyUrl": "https://www.amazon.com/dp/B07B2K1HFN",
+    "year": 2018
+  },
+  {
+    "title": "The Spiritual Mental Health Diet",
+    "subtitle": "A 40-Day Program to Nourish Your Soul",
+    "image": "/assets/ingested/book-smhd.png",
+    "description": "A 40-day transformational program combining yoga, breathwork, meditation, and Ayurvedic nutrition to support mental health and spiritual growth.",
+    "buyUrl": "https://www.amazon.com/Spiritual-Mental-Health-Diet-Program/dp/B0BXNRN3KG",
+    "year": 2023
+  },
+  {
+    "title": "The Power of Breath",
+    "subtitle": "The Art of Breathing Well for Harmony, Happiness and Health",
+    "image": "/assets/ingested/book-power-breath-1.jpg",
+    "description": "A comprehensive manual for using ancient and modern breathwork techniques to reduce stress, increase energy, and cultivate inner peace. Award-winning title.",
+    "buyUrl": "https://www.amazon.com/Power-Breath-Breathing-Harmony-Happiness/dp/1785041746",
+    "year": 2019
+  }
+]

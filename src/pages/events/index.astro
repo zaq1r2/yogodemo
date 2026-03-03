@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import events from '../../content/events.json';
+const base = import.meta.env.BASE_URL;
+
+const now = new Date().toISOString().split('T')[0];
+const upcoming = events.filter((e) => e.date >= now).sort((a, b) => a.date.localeCompare(b.date));
+const past = events.filter((e) => e.date < now).sort((a, b) => b.date.localeCompare(a.date));
+
+function formatDate(dateStr: string) {
+  const d = new Date(dateStr + 'T00:00:00');
+  return d.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<BaseLayout title="Events" description="Upcoming and past events: workshops, retreats, and programs with Christine Burke.">
+  <!-- Hero -->
+  <section class="bg-brand-50 py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl font-serif font-bold text-brand-900">Events</h1>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        Join Christine for workshops, retreats, and special programs throughout the year.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Tabs -->
+  <div class="bg-white border-b border-gray-200 sticky top-16 lg:top-20 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex gap-6 py-4">
+        <a href="#upcoming" class="text-sm font-semibold text-sage-600 border-b-2 border-sage-600 pb-2">
+          Upcoming ({upcoming.length})
+        </a>
+        <a href="#past" class="text-sm font-medium text-gray-500 hover:text-gray-700 pb-2">
+          Past ({past.length})
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upcoming Events -->
+  <section id="upcoming" class="py-16 bg-white" aria-labelledby="upcoming-heading">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 id="upcoming-heading" class="text-2xl font-serif font-bold text-brand-900 mb-8">Upcoming Events</h2>
+      {upcoming.length === 0 ? (
+        <div class="text-center py-12">
+          <p class="text-gray-500">No upcoming events at this time. Check back soon or subscribe to the newsletter.</p>
+        </div>
+      ) : (
+        <div class="space-y-6">
+          {upcoming.map((event) => {
+            const d = new Date(event.date + 'T00:00:00');
+            return (
+              <article class="bg-brand-50 rounded-2xl p-6 sm:p-8 hover:shadow-md transition-shadow border border-brand-100">
+                <div class="flex flex-col sm:flex-row gap-6">
+                  <div class="flex-shrink-0 text-center bg-white rounded-xl px-4 py-3 shadow-sm self-start min-w-[80px]">
+                    <span class="block text-xs font-semibold text-sage-600 uppercase">{d.toLocaleDateString('en-US', { month: 'short' })}</span>
+                    <span class="block text-3xl font-bold text-sage-800">{d.getDate()}</span>
+                    <span class="block text-xs text-gray-500">{d.getFullYear()}</span>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
+                      <span class="inline-block text-xs font-medium text-white bg-sage-600 px-2.5 py-1 rounded-full capitalize">{event.type}</span>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-brand-900 mb-2">{event.title}</h3>
+                    <div class="flex flex-wrap gap-4 text-sm text-gray-500 mb-3">
+                      <span class="flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        {event.time}
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        {event.location}
+                      </span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">{event.description}</p>
+                    <a
+                      href={event.registrationUrl.startsWith('/') ? `${base}${event.registrationUrl.slice(1)}` : event.registrationUrl}
+                      class="inline-flex px-6 py-2.5 bg-sage-600 hover:bg-sage-700 text-white text-sm font-semibold rounded-full transition-colors"
+                    >
+                      Register / Inquire
+                    </a>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Past Events -->
+  <section id="past" class="py-16 bg-gray-50" aria-labelledby="past-heading">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 id="past-heading" class="text-2xl font-serif font-bold text-brand-900 mb-8">Past Events</h2>
+      {past.length === 0 ? (
+        <p class="text-gray-500 text-center py-8">No past events to show.</p>
+      ) : (
+        <div class="space-y-4">
+          {past.map((event) => (
+            <article class="bg-white rounded-xl p-5 border border-gray-200 opacity-75">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                <span class="text-sm text-gray-400 min-w-[120px]">{formatDate(event.date)}</span>
+                <div class="flex-1">
+                  <h3 class="font-serif font-bold text-gray-700">{event.title}</h3>
+                  <p class="text-sm text-gray-500">{event.location}</p>
+                </div>
+                <span class="text-xs font-medium text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full capitalize self-start">{event.type}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Source -->
+  <div class="py-4 text-center bg-gray-50">
+    <p class="text-xs text-gray-400">
+      Event data sourced from
+      <a href="https://www.liberationyoga.com/workshops" class="underline hover:text-gray-600" target="_blank" rel="noopener">liberationyoga.com</a> and
+      <a href="https://www.christineburkeyoga.com/retreats-events" class="underline hover:text-gray-600" target="_blank" rel="noopener">christineburkeyoga.com</a>
+    </p>
+  </div>
+</BaseLayout>

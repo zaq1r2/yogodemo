@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import books from '../../content/books.json';
+import press from '../../content/press.json';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Books & Press" description="Christine Burke's published books on yoga and breathwork, plus press mentions and media features.">
+  <!-- Hero -->
+  <section class="bg-brand-50 py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl font-serif font-bold text-brand-900">Books & Press</h1>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        Christine's published works on yoga, breathwork, and holistic wellness, plus media features and press mentions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Books -->
+  <section class="py-20 bg-white" aria-labelledby="books-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 id="books-heading" class="text-3xl font-serif font-bold text-brand-900 mb-12 text-center">Books</h2>
+      <div class="space-y-16">
+        {books.map((book, i) => (
+          <article class={`grid lg:grid-cols-2 gap-10 items-center ${i % 2 !== 0 ? 'lg:[direction:rtl] lg:[&>*]:[direction:ltr]' : ''}`}>
+            <div class="mx-auto">
+              <img
+                src={`${base}${book.image.replace(/^\//, '')}`}
+                alt={book.title}
+                class="rounded-xl shadow-xl max-w-xs w-full"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3 class="text-2xl font-serif font-bold text-brand-900 mb-2">{book.title}</h3>
+              <p class="text-sage-600 font-medium mb-4">{book.subtitle}</p>
+              <p class="text-gray-600 leading-relaxed mb-6">{book.description}</p>
+              <div class="flex flex-wrap gap-3">
+                <a
+                  href={book.buyUrl}
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex px-6 py-3 bg-sage-600 hover:bg-sage-700 text-white font-semibold rounded-full transition-colors shadow-sm"
+                >
+                  Buy on Amazon
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Review -->
+  <section class="py-16 bg-brand-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <blockquote class="text-center">
+        <p class="text-lg text-gray-700 leading-relaxed italic mb-6">
+          "This book is well laid out and easy to read — it is accessible enough for beginners, yet deep enough to engage more seasoned yogis. The imagery is friendly and compelling, and each section offers healing techniques to self-medicate. Christine Burke's heartfelt and authentic approach shines through. She clearly dances with love, dedication and grace and you can feel this as her book is full of prana — the life force energy practically zings off the pages!"
+        </p>
+        <cite class="text-sm font-semibold text-brand-800 not-italic">— Book Review, The Yoga Healer</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Press -->
+  <section class="py-20 bg-white" aria-labelledby="press-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 id="press-heading" class="text-3xl font-serif font-bold text-brand-900 mb-12 text-center">Press & Media</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {press.map((item) => (
+          <article class="bg-brand-50 rounded-2xl overflow-hidden hover:shadow-md transition-shadow border border-brand-100">
+            <div class="aspect-[3/2] overflow-hidden bg-brand-100">
+              <img
+                src={`${base}${item.image.replace(/^\//, '')}`}
+                alt={item.title}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-medium text-sage-600 uppercase tracking-wider">{item.publication}</span>
+              <h3 class="text-lg font-serif font-bold text-brand-800 mt-1 mb-2">{item.title}</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">{item.description}</p>
+              <p class="text-xs text-gray-400 mt-3">{item.date}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Page Image -->
+  <section class="py-16 bg-brand-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <img
+        src={`${base}assets/ingested/book-page.jpg`}
+        alt="Book interior page spread"
+        class="rounded-2xl shadow-lg w-full"
+        loading="lazy"
+      />
+      <blockquote class="mt-8 text-center">
+        <p class="text-gray-600 leading-relaxed italic max-w-2xl mx-auto">
+          "Christine's voice, enthusiasm, and knowledge here is contagious. When reading these pages, you'll feel as though you are practicing with her. It will be a fun, uplifting, healing, and even powerful practice with Christine as your guide."
+        </p>
+        <cite class="block text-sm font-semibold text-brand-800 not-italic mt-3">
+          — Kathleen Ross-Allee, C-IAYT, LMU Yoga Therapy Rx Managing Director
+        </cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Source -->
+  <div class="py-4 text-center">
+    <p class="text-xs text-gray-400">
+      Content sourced from
+      <a href="https://www.christineburkeyoga.com/published-works" class="underline hover:text-gray-600" target="_blank" rel="noopener">christineburkeyoga.com</a>
+    </p>
+  </div>
+</BaseLayout>

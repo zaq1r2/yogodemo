@@ -1,0 +1,50 @@
+[
+  {
+    "id": "smhd",
+    "title": "The Spiritual Mental Health Diet",
+    "subtitle": "A 40-Day Transformational Program",
+    "description": "This online course guides you through a 40-day journey integrating yoga, breathwork, meditation, journaling, and Ayurvedic nutrition. Designed for anyone seeking mental clarity, emotional balance, and spiritual depth.",
+    "image": "/assets/ingested/book-smhd.png",
+    "features": [
+      "40 days of guided practices",
+      "Daily breathwork & meditation",
+      "Ayurvedic nutrition guidance",
+      "Journaling prompts",
+      "Community support"
+    ],
+    "cta": "Learn More",
+    "ctaUrl": "/programs/#smhd"
+  },
+  {
+    "id": "teacher-training",
+    "title": "Yoga Teacher Training",
+    "subtitle": "200-Hour Certification",
+    "description": "Christine's teacher training program draws on over 25 years of experience to provide a thorough, heartfelt, and rigorous foundation in yoga instruction. Covering asana, pranayama, meditation, anatomy, philosophy, and the art of teaching.",
+    "image": "/assets/ingested/christine-teaching.jpg",
+    "features": [
+      "200-hour Yoga Alliance certified",
+      "In-depth asana training",
+      "Pranayama & meditation",
+      "Yoga philosophy & history",
+      "Teaching methodology",
+      "Business of yoga"
+    ],
+    "cta": "Inquire",
+    "ctaUrl": "/contact/"
+  },
+  {
+    "id": "retreats",
+    "title": "Retreats & Events",
+    "subtitle": "Immersive Experiences",
+    "description": "Join Christine for transformative retreats and workshops in beautiful locations. These immersive experiences offer a chance to deepen your practice, connect with community, and rejuvenate your spirit.",
+    "image": "/assets/ingested/liberation-class.jpg",
+    "features": [
+      "Multi-day immersive retreats",
+      "Workshops & masterclasses",
+      "Guest teacher collaborations",
+      "Domestic & international locations"
+    ],
+    "cta": "View Events",
+    "ctaUrl": "/events/"
+  }
+]

@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Liberation Yoga (Legacy)" description="The story of Liberation Yoga — a beloved Los Angeles yoga studio founded in 2004 by Christine Burke and Gary McCleery.">
+  <!-- Hero -->
+  <section class="relative bg-brand-900 text-white py-20 lg:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-30">
+      <img
+        src={`${base}assets/ingested/liberation-studio-2.jpg`}
+        alt=""
+        class="w-full h-full object-cover"
+        aria-hidden="true"
+      />
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sage-300 font-medium text-sm uppercase tracking-wider mb-3">Legacy</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight">Liberation Yoga</h1>
+      <p class="mt-4 text-xl text-brand-200 max-w-2xl mx-auto">A Los Angeles Legacy (2004 – 2021)</p>
+    </div>
+  </section>
+
+  <!-- Studio Note -->
+  <div class="bg-sage-50 border-b border-sage-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <p class="text-sm text-sage-800 text-center">
+        <strong>Note:</strong> Liberation Yoga's brick-and-mortar studio in Los Angeles closed in October 2021. Christine continues to offer classes, workshops, retreats, and teacher training.
+        <a href={`${base}work-with-christine/`} class="underline font-semibold hover:text-sage-900">See current offerings &rarr;</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Story -->
+  <section class="py-20 bg-white" aria-labelledby="story-heading">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 id="story-heading" class="text-3xl font-serif font-bold text-brand-900 mb-8">The Liberation Yoga Story</h2>
+      <div class="space-y-6 text-gray-600 leading-relaxed">
+        <p>
+          Liberation Yoga is a Hatha-based yoga studio in mid-city Los Angeles founded in 2004 by Christine Burke and Gary McCleery. They wanted to build a community and place to make peace with your body, mind, and the world — to find Liberation. They sought an alternative to the corporate yoga vibe and mentality that was fast uprooting independent studios in Los Angeles and beyond.
+        </p>
+        <p>
+          Liberation Yoga is about living authentically. It's about finding one's true nature through the practice of yoga and sharing this limitless life force with the world. At Liberation we celebrate all styles of Hatha Yoga and all levels of practitioners, recognizing that every individual has a unique path to follow and every teacher has a unique gift to offer.
+        </p>
+        <p>
+          Yoga seeks to create union, relieve suffering and thereby liberate the soul during this lifetime. Liberation is a home where people can create healthy, strong, vibrant bodies and cultivate creative, tranquil minds.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Made It Special -->
+  <section class="py-20 bg-brand-50" aria-labelledby="special-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 id="special-heading" class="text-3xl font-serif font-bold text-brand-900 mb-12 text-center">What Made It Special</h2>
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div class="space-y-6">
+          <p class="text-gray-600 leading-relaxed">
+            The physical beauty of the space embodied both the internal and external experience of yoga. The asana room was warm and bright, filled with natural light and an indoor garden resting upon rich, eco-conscious wood floors.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Walking into Liberation was like walking into a spacious living room with twinkling star lights that provide a safe, magical environment in which to explore the vast regions of the interior mind, body, and spirit.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Every item sold came from a company that shares the values and ethos of yoga — fairly traded, kind to the environment, giving back to a cause, and/or handmade by the Liberation Yoga community.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <img src={`${base}assets/ingested/liberation-studio-1.jpg`} alt="Liberation Yoga studio" class="rounded-xl shadow-md w-full object-cover aspect-square" loading="lazy" />
+          <img src={`${base}assets/ingested/liberation-class.jpg`} alt="Yoga class at Liberation" class="rounded-xl shadow-md w-full object-cover aspect-square" loading="lazy" />
+          <img src={`${base}assets/ingested/liberation-front.jpg`} alt="Liberation Yoga front" class="rounded-xl shadow-md w-full object-cover aspect-square" loading="lazy" />
+          <img src={`${base}assets/ingested/liberation-fullsize.jpg`} alt="Liberation Yoga" class="rounded-xl shadow-md w-full object-cover aspect-square" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-serif font-bold text-brand-900 mb-10 text-center">Liberation Yoga Was Dedicated To</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-sage-50 rounded-2xl p-6 text-center">
+          <h3 class="text-lg font-serif font-bold text-sage-800 mb-2">Health</h3>
+          <p class="text-sm text-gray-600">Soundness of body and mind; freedom from physical or mental disease; a condition of well being.</p>
+        </div>
+        <div class="bg-sage-50 rounded-2xl p-6 text-center">
+          <h3 class="text-lg font-serif font-bold text-sage-800 mb-2">Peace</h3>
+          <p class="text-sm text-gray-600">Inner contentment, serenity; peace of mind; the absence of hostilities.</p>
+        </div>
+        <div class="bg-sage-50 rounded-2xl p-6 text-center">
+          <h3 class="text-lg font-serif font-bold text-sage-800 mb-2">Freedom</h3>
+          <p class="text-sm text-gray-600">The condition of being free from constraints; ease and facility of movement.</p>
+        </div>
+        <div class="bg-sage-50 rounded-2xl p-6 text-center">
+          <h3 class="text-lg font-serif font-bold text-sage-800 mb-2">Community</h3>
+          <p class="text-sm text-gray-600">Sharing, participation, fellowship; the region occupied by a group of interacting organisms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards -->
+  <section class="py-16 bg-brand-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-serif font-bold text-brand-900 mb-8 text-center">Awards & Recognition</h2>
+      <div class="space-y-4 max-w-2xl mx-auto">
+        <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm">
+          <div class="w-10 h-10 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-sage-600" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-brand-800">"Top 20 Yoga Studios In The World"</p>
+            <p class="text-sm text-gray-500">Travel + Leisure Magazine</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm">
+          <div class="w-10 h-10 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-sage-600" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-brand-800">"Most Beautiful Yoga Studio"</p>
+            <p class="text-sm text-gray-500">Hoodline.com & Tripping.com</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm">
+          <div class="w-10 h-10 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-sage-600" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-brand-800">"Best Yoga Studio in Los Angeles"</p>
+            <p class="text-sm text-gray-500">LA Weekly (twice)</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm">
+          <div class="w-10 h-10 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-sage-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-brand-800">Featured in "Big Little Lies"</p>
+            <p class="text-sm text-gray-500">Film & Television Location</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Christine's Words -->
+  <section class="py-20 bg-brand-800 text-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <blockquote>
+        <p class="text-xl leading-relaxed italic mb-6">
+          "Brick and mortar family business has always been a passion of ours. Creating communal gathering space that supports the individual and the whole has been our dharmic path and greatest blessing and honor. A family business — and you are our family — always."
+        </p>
+        <p class="text-lg leading-relaxed italic mb-6 text-brand-200">
+          "So much of the yoga happens in the letting go and so much of the practice is the preparation for the courage to imagine new frontiers. And to see the natural, organic beauty in the endings — even as they break our hearts."
+        </p>
+        <cite class="text-brand-300 not-italic">— Christine Burke</cite>
+      </blockquote>
+      <p class="mt-8 text-brand-400 text-sm italic">
+        Moksha (Liberation): The transcendent state attained as a result of being released from the cycle of rebirth. Freedom and Liberation.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-sage-50 text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-serif font-bold text-brand-900 mb-4">The Spirit Continues</h2>
+      <p class="text-gray-600 mb-8">
+        Christine continues to offer classes via Zoom, pop-up workshops, retreats, and teacher training under the Liberation Yoga banner.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href={`${base}work-with-christine/`} class="px-8 py-3.5 bg-sage-600 hover:bg-sage-700 text-white font-semibold rounded-full transition-colors shadow-sm">
+          Work with Christine
+        </a>
+        <a href={`${base}events/`} class="px-8 py-3.5 bg-white hover:bg-gray-50 text-brand-800 font-semibold rounded-full border border-brand-200 transition-colors">
+          View Events
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Source -->
+  <div class="py-4 text-center">
+    <p class="text-xs text-gray-400">
+      Content sourced from
+      <a href="https://www.liberationyoga.com/our-story" class="underline hover:text-gray-600" target="_blank" rel="noopener">liberationyoga.com/our-story</a> and
+      <a href="https://www.liberationyoga.com/" class="underline hover:text-gray-600" target="_blank" rel="noopener">liberationyoga.com</a>
+    </p>
+  </div>
+</BaseLayout>

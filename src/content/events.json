@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Breathwork & Meditation Workshop",
+    "date": "2026-04-12",
+    "time": "10:00 AM - 1:00 PM",
+    "location": "Online via Zoom",
+    "description": "A 3-hour deep dive into pranayama techniques and guided meditation. Open to all levels.",
+    "type": "workshop",
+    "registrationUrl": "/contact/"
+  },
+  {
+    "title": "The Spiritual Mental Health Diet - Spring Cohort",
+    "date": "2026-05-01",
+    "time": "Self-paced with weekly live calls",
+    "location": "Online",
+    "description": "Begin your 40-day transformational journey with a supportive community. Includes live weekly group sessions with Christine.",
+    "type": "program",
+    "registrationUrl": "/contact/"
+  },
+  {
+    "title": "Summer Yoga Retreat - Ojai",
+    "date": "2026-06-20",
+    "time": "June 20-23, 2026",
+    "location": "Ojai, California",
+    "description": "A 4-day immersive retreat in the beautiful Ojai Valley. Daily yoga, breathwork, meditation, farm-to-table meals, and nature hikes.",
+    "type": "retreat",
+    "registrationUrl": "/contact/"
+  },
+  {
+    "title": "Teacher Training Info Session",
+    "date": "2026-03-15",
+    "time": "12:00 PM - 1:00 PM",
+    "location": "Online via Zoom",
+    "description": "Free info session for anyone interested in Christine's 200-hour yoga teacher training program. Q&A included.",
+    "type": "info-session",
+    "registrationUrl": "/contact/"
+  },
+  {
+    "title": "Yoga & Ayurveda Masterclass",
+    "date": "2025-11-10",
+    "time": "2:00 PM - 5:00 PM",
+    "location": "Los Angeles, CA",
+    "description": "An afternoon exploring the connection between yoga and Ayurveda. Learn to align your practice with the seasons and your dosha.",
+    "type": "workshop",
+    "registrationUrl": "#"
+  },
+  {
+    "title": "Liberation Yoga Reunion Gathering",
+    "date": "2025-09-15",
+    "time": "10:00 AM - 2:00 PM",
+    "location": "Los Angeles, CA",
+    "description": "A reunion gathering for the Liberation Yoga community. Practice, connect, and celebrate the legacy of our beloved studio.",
+    "type": "community",
+    "registrationUrl": "#"
+  },
+  {
+    "title": "New Year Breathwork Intensive",
+    "date": "2026-01-04",
+    "time": "9:00 AM - 4:00 PM",
+    "location": "Online via Zoom",
+    "description": "Start the new year with intention through this full-day breathwork intensive. Includes pranayama, meditation, and intention-setting practices.",
+    "type": "workshop",
+    "registrationUrl": "#"
+  }
+]

@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Work with Christine" description="Private yoga sessions, group classes, online workshops, and corporate programs with Christine Burke.">
+  <!-- Hero -->
+  <section class="bg-brand-50 py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl font-serif font-bold text-brand-900">Work with Christine</h1>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        Whether you're beginning your yoga journey or deepening an established practice, Christine offers personalized guidance to meet you where you are.
+      </p>
+    </div>
+  </section>
+
+  <!-- Private Sessions -->
+  <section class="py-20 bg-white" aria-labelledby="private-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 id="private-heading" class="text-3xl font-serif font-bold text-brand-900 mb-6">Private Sessions</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Working privately with Christine is not your typical yoga private. Though you can certainly request private sessions that focus purely on fine tuning your physical practice, learning the basics of breath and meditation, and creating a solid foundation for your specific goals and conditions, her specialty is a very holistic and transformative approach.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Together you will explore the vision you hold for yourself and your life, present and future, and use the tools and philosophy of the practice to access greater health, clarity, vitality and light in your life. This can result in much more than a solid yoga practice on the mat, but can be a truly enlightening experience that touches every aspect of your life.
+          </p>
+          <h3 class="text-xl font-serif font-bold text-brand-800 mt-8 mb-3">Teen Yoga: Life Skills 101</h3>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Christine uses the art and science of yoga in a targeted way to help teens manage stress, improve body image and experience greater self acceptance and self love through learning healthy self care habits.
+          </p>
+          <a href={`${base}contact/`} class="inline-flex px-8 py-3.5 bg-sage-600 hover:bg-sage-700 text-white font-semibold rounded-full transition-colors shadow-sm">
+            Book a Session
+          </a>
+        </div>
+        <img
+          src={`${base}assets/ingested/christine-portrait.jpg`}
+          alt="Christine Burke"
+          class="rounded-2xl shadow-lg w-full max-w-md mx-auto"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Classes -->
+  <section class="py-20 bg-brand-50" aria-labelledby="classes-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 id="classes-heading" class="text-3xl font-serif font-bold text-brand-900 mb-4 text-center">Classes</h2>
+      <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        Christine offers both online and in-person classes designed to set you up for your best day and week.
+      </p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/></svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-brand-800 mb-2">Morning Magic (Level 1-2)</h3>
+          <p class="text-sm text-sage-600 font-medium mb-3">Tuesdays & Thursdays, 8:30 AM</p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            This class sets you up for an excellent day. With breath, meditation and intention setting, Christine moves you through a dynamic but moderate paced class that is easy on the joints while building strength, flexibility and focus.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-brand-800 mb-2">Spirit Flow (Mixed Level)</h3>
+          <p class="text-sm text-sage-600 font-medium mb-3">Tuesdays, 6:30 PM</p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            The perfect transition from day to night. You will release the build up of tension in body and mind, detoxify mind and body, and relax the nervous system for a calm evening and good night's sleep.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-brand-800 mb-2">Candlelight Energy Flow (Level 2)</h3>
+          <p class="text-sm text-sage-600 font-medium mb-3">Sundays, 6:30 - 8:00 PM</p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            This award-winning Vinyasa Flow class is set to music and candlelight, incorporates breath work and meditation and sets a tone of inspiration and peace for the week ahead. Each class centers around the "chakra of the week."
+          </p>
+        </article>
+      </div>
+      <p class="text-center text-sm text-gray-500 mt-8">
+        Classes available via Zoom and pop-up locations. <a href={`${base}contact/`} class="text-sage-600 hover:text-sage-700 font-medium">Contact Christine</a> for current schedule.
+      </p>
+    </div>
+  </section>
+
+  <!-- Corporate & Schools -->
+  <section class="py-20 bg-white" aria-labelledby="corporate-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 id="corporate-heading" class="text-3xl font-serif font-bold text-brand-900 mb-6">Corporate & Schools</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Christine has been the mindfulness and yoga teacher at Marlborough School since 2012, and has served as a yoga consultant for companies like Eddie Bauer. She brings her expertise to corporate wellness programs, school settings, and team-building events.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          Custom programs available for groups of all sizes, focusing on stress management, breathwork, mindfulness, and wellness education.
+        </p>
+        <a href={`${base}contact/`} class="inline-flex px-8 py-3.5 bg-brand-100 hover:bg-brand-200 text-brand-800 font-semibold rounded-full transition-colors">
+          Inquire About Programs
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
