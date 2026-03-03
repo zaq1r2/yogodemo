@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../../version-b/layouts/BaseLayout.astro';
+import EyebrowLabel from '../../../version-b/components/EyebrowLabel.astro';
+import EditorialList from '../../../version-b/components/EditorialList.astro';
+import BackLink from '../../../version-b/components/BackLink.astro';
+import Button from '../../../version-b/components/Button.astro';
+import Section from '../../../version-b/components/Section.astro';
+import events from '../../../content/events.json';
+
+const base = import.meta.env.BASE_URL;
+const vb = `${base}version-b/`;
+const now = new Date().toISOString().split('T')[0];
+
+const upcoming = events.filter((e) => e.date >= now).sort((a, b) => a.date.localeCompare(b.date));
+const past = events.filter((e) => e.date < now).sort((a, b) => b.date.localeCompare(a.date));
+
+function fmtDate(dateStr: string) {
+  const d = new Date(dateStr + 'T00:00:00');
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+const upcomingItems = upcoming.map((e) => ({
+  title: e.title,
+  meta: fmtDate(e.date) + ' · ' + e.location,
+  description: e.description,
+  href: e.registrationUrl.startsWith('/') ? `${vb}${e.registrationUrl.replace(/^\//, '')}` : e.registrationUrl,
+}));
+
+const pastItems = past.map((e) => ({
+  title: e.title,
+  meta: fmtDate(e.date) + ' · ' + e.location,
+}));
+---
+
+<BaseLayout title="Events" description="Upcoming and past workshops, retreats, and programs with Christine Burke.">
+  <Section>
+    <BackLink href={vb} />
+    <EyebrowLabel text="Events" class="mb-space-2" />
+    <h1 class="mb-space-4">Workshops, Retreats<br />&amp; Programs</h1>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <!-- Upcoming -->
+  <Section id="upcoming">
+    <EyebrowLabel text={`Upcoming (${upcoming.length})`} class="mb-space-3" />
+    {upcoming.length === 0 ? (
+      <p class="text-muted">No upcoming events. Check back soon or subscribe to the newsletter.</p>
+    ) : (
+      <EditorialList items={upcomingItems} />
+    )}
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <!-- Past -->
+  <Section id="past">
+    <EyebrowLabel text={`Past (${past.length})`} class="mb-space-3" />
+    {past.length === 0 ? (
+      <p class="text-muted">No past events to display.</p>
+    ) : (
+      <div class="opacity-60">
+        <EditorialList items={pastItems} />
+      </div>
+    )}
+  </Section>
+
+  <div class="content-col pb-4">
+    <p class="text-xs text-muted">
+      Source: <a href="https://www.liberationyoga.com/workshops" class="hover-underline" target="_blank" rel="noopener">liberationyoga.com</a>,
+      <a href="https://www.christineburkeyoga.com/retreats-events" class="hover-underline" target="_blank" rel="noopener">christineburkeyoga.com</a>
+    </p>
+  </div>
+</BaseLayout>

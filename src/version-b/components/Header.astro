@@ -1,0 +1,66 @@
+---
+import site from '../../content/site.json';
+const base = import.meta.env.BASE_URL;
+const vb = `${base}version-b/`;
+
+const navLinks = [
+  { label: 'Work with Christine', href: `${vb}work-with-christine/` },
+  { label: 'Programs', href: `${vb}programs/` },
+  { label: 'Events', href: `${vb}events/` },
+  { label: 'Books', href: `${vb}books-press/` },
+  { label: 'About', href: `${vb}about/` },
+  { label: 'Contact', href: `${vb}contact/` },
+];
+---
+
+<header class="py-6 lg:py-8">
+  <nav class="content-col" aria-label="Main navigation">
+    <!-- Desktop -->
+    <div class="hidden md:flex items-center justify-between">
+      <a href={vb} class="text-sm font-medium tracking-wide hover-underline">
+        Christine Burke Yoga
+      </a>
+      <div class="flex items-center gap-1 text-sm text-muted">
+        {navLinks.map((link, i) => (
+          <>
+            <a href={link.href} class="hover-underline text-fg">{link.label}</a>
+            {i < navLinks.length - 1 && <span class="mx-1.5 text-border select-none">&middot;</span>}
+          </>
+        ))}
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="md:hidden flex items-center justify-between">
+      <a href={vb} class="text-sm font-medium tracking-wide">
+        Christine Burke Yoga
+      </a>
+      <button
+        id="vb-menu-btn"
+        class="text-sm text-muted hover-underline"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        Menu
+      </button>
+    </div>
+    <div id="vb-mobile-menu" class="hidden md:hidden mt-6 pb-2">
+      <div class="flex flex-col gap-3">
+        {navLinks.map((link) => (
+          <a href={link.href} class="text-sm text-fg hover-underline">{link.label}</a>
+        ))}
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('vb-menu-btn');
+  const menu = document.getElementById('vb-mobile-menu');
+  btn?.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    btn.textContent = open ? 'Menu' : 'Close';
+    menu?.classList.toggle('hidden');
+  });
+</script>

@@ -1,0 +1,12 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+  narrow?: boolean;
+}
+const { id, class: className = '', narrow = true } = Astro.props;
+---
+
+<section id={id} class:list={['py-space-5', narrow ? 'content-col' : 'container-wide', className]}>
+  <slot />
+</section>

@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../../version-b/layouts/BaseLayout.astro';
+import EyebrowLabel from '../../../version-b/components/EyebrowLabel.astro';
+import BackLink from '../../../version-b/components/BackLink.astro';
+import Section from '../../../version-b/components/Section.astro';
+import site from '../../../content/site.json';
+
+const base = import.meta.env.BASE_URL;
+const vb = `${base}version-b/`;
+---
+
+<BaseLayout title="Contact" description="Get in touch with Christine Burke for sessions, workshops, and inquiries.">
+  <Section>
+    <BackLink href={vb} />
+    <EyebrowLabel text="Contact" class="mb-space-2" />
+    <h1 class="mb-space-4">Get in Touch</h1>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <Section>
+    <div class="grid md:grid-cols-2 gap-space-5">
+      <!-- Info -->
+      <div>
+        <div class="space-y-space-3">
+          <div>
+            <EyebrowLabel text="Email" class="mb-1" />
+            <a href={`mailto:${site.email}`} class="hover-underline">{site.email}</a>
+          </div>
+          <div>
+            <EyebrowLabel text="Location" class="mb-1" />
+            <p>Los Angeles, California</p>
+            <p class="text-sm text-muted">Online classes via Zoom + pop-up locations</p>
+          </div>
+          <div>
+            <EyebrowLabel text="Follow" class="mb-2" />
+            <div class="flex gap-4 text-sm">
+              {site.socials.instagram && <a href={site.socials.instagram} class="hover-underline" target="_blank" rel="noopener">Instagram</a>}
+              {site.socials.facebook && <a href={site.socials.facebook} class="hover-underline" target="_blank" rel="noopener">Facebook</a>}
+              {site.socials.youtube && <a href={site.socials.youtube} class="hover-underline" target="_blank" rel="noopener">YouTube</a>}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div>
+        <p class="text-sm text-muted mb-4">
+          This form uses <a href="https://formspree.io" target="_blank" rel="noopener" class="hover-underline">Formspree</a> (third-party). Or email directly.
+        </p>
+        <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-4">
+          <div>
+            <label for="name" class="text-xs text-muted uppercase tracking-widest block mb-1">Name</label>
+            <input
+              type="text" id="name" name="name" required
+              class="w-full px-4 py-2.5 text-sm bg-transparent border border-border rounded-none focus:outline-none focus:border-fg"
+            />
+          </div>
+          <div>
+            <label for="email" class="text-xs text-muted uppercase tracking-widest block mb-1">Email</label>
+            <input
+              type="email" id="email" name="email" required
+              class="w-full px-4 py-2.5 text-sm bg-transparent border border-border rounded-none focus:outline-none focus:border-fg"
+            />
+          </div>
+          <div>
+            <label for="subject" class="text-xs text-muted uppercase tracking-widest block mb-1">Subject</label>
+            <select
+              id="subject" name="subject"
+              class="w-full px-4 py-2.5 text-sm bg-transparent border border-border rounded-none focus:outline-none focus:border-fg"
+            >
+              <option>Private Sessions</option>
+              <option>Classes</option>
+              <option>Teacher Training</option>
+              <option>Retreats & Events</option>
+              <option>Corporate / Schools</option>
+              <option>Press / Media</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" class="text-xs text-muted uppercase tracking-widest block mb-1">Message</label>
+            <textarea
+              id="message" name="message" rows="5" required
+              class="w-full px-4 py-2.5 text-sm bg-transparent border border-border rounded-none focus:outline-none focus:border-fg resize-y"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="px-6 py-2.5 text-sm border border-fg text-fg bg-transparent hover:bg-fg hover:text-bg transition-colors duration-200"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

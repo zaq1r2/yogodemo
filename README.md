@@ -1,23 +1,58 @@
 # Christine Burke Yoga — Demo Site
 
-A static demo website for Christine Burke Yoga, built with **Astro + Tailwind CSS** and deployed to **GitHub Pages**.
+A static demo website for Christine Burke Yoga with **two design versions**, built with **Astro + Tailwind CSS** and deployed to **GitHub Pages**.
 
 Combines content from:
 - [christineburkeyoga.com](https://www.christineburkeyoga.com/)
 - [liberationyoga.com](https://www.liberationyoga.com/) (legacy site)
 
-## Pages
+## Two Versions
+
+The landing page links to both:
+
+| Version | Path | Design |
+|---------|------|--------|
+| **Version A** | `/version-a/` | Wellness editorial — warm tones, rounded cards, sage accents |
+| **Version B** | `/version-b/` | Minimal text-first — inspired by [Grá](https://xn--gr-nia.com/), print-editorial, typographic |
+
+Both versions share the same content files and images. Each has its own layouts, components, and CSS.
+
+## Pages (same for both versions)
 
 | Page | Path |
 |------|------|
-| Home | `/` |
-| Work with Christine | `/work-with-christine/` |
-| Programs | `/programs/` |
-| Events | `/events/` |
-| Books & Press | `/books-press/` |
-| About | `/about/` |
-| Liberation Yoga (Legacy) | `/liberation-yoga/` |
-| Contact | `/contact/` |
+| Home | `/version-{a,b}/` |
+| Work with Christine | `/version-{a,b}/work-with-christine/` |
+| Programs | `/version-{a,b}/programs/` |
+| Events | `/version-{a,b}/events/` |
+| Books & Press | `/version-{a,b}/books-press/` |
+| About | `/version-{a,b}/about/` |
+| Liberation Yoga (Legacy) | `/version-{a,b}/liberation-yoga/` |
+| Contact | `/version-{a,b}/contact/` |
+
+## Project Structure
+
+```
+src/
+├── content/              # Shared content (JSON, MD)
+├── styles/
+│   ├── version-a.css     # Version A design tokens + styles
+│   └── version-b.css     # Version B design tokens + styles
+├── version-a/
+│   ├── layouts/          # Version A layout
+│   └── components/       # Version A components (Header, Footer)
+├── version-b/
+│   ├── layouts/          # Version B layout
+│   └── components/       # Version B components (Header, Footer, EyebrowLabel, etc.)
+└── pages/
+    ├── index.astro       # Landing page (links to both versions)
+    ├── version-a/        # Version A pages
+    └── version-b/        # Version B pages
+public/
+└── assets/ingested/      # Shared downloaded images
+docs/
+└── inspiration-notes.md  # Version B design system documentation
+```
 
 ## Quick Start
 
@@ -30,65 +65,26 @@ npm run preview    # Preview production build
 
 ## Content Ingestion
 
-Content and images have been pre-downloaded and committed to the repo. To re-run ingestion:
+Content and images are pre-downloaded and committed. To re-run:
 
 ```bash
 npm run ingest
 ```
 
-This fetches HTML from source URLs, extracts text, downloads images, and produces structured content files in `src/content/` and `public/assets/ingested/`.
-
-## Content Structure
-
-Editable content files:
-
-```
-src/content/
-  site.json         # Site name, tagline, email, socials, CTA labels
-  events.json       # Events list (sorted by date on render)
-  programs.json     # Programs with features and CTAs
-  books.json        # Book covers, descriptions, buy links
-  press.json        # Press mentions and media features
-  about.md          # Bio and approach (real extracted copy)
-  legacy.md         # Liberation Yoga story (real extracted copy)
-  ingested/         # Raw ingested markdown from source sites
-```
-
 ## GitHub Pages Deployment
 
-### Setup
+1. Push to GitHub
+2. Go to **Settings > Pages** → set **Source** to **GitHub Actions**
+3. Deploys automatically on push to `main`
 
-1. Push this repo to GitHub
-2. Go to **Settings > Pages**
-3. Set **Source** to **GitHub Actions**
-4. The workflow at `.github/workflows/deploy.yml` will build and deploy on push to `main`
+**Expected URL:** `https://<USERNAME>.github.io/yogodemo/`
 
-### Expected URL
-
-```
-https://<USERNAME>.github.io/yogodemo/
-```
-
-### BASE_PATH
-
-The GitHub Actions workflow automatically sets `BASE_PATH=/<repo-name>/` for the build. For local development, the base path defaults to `/`.
-
-To test with a custom base path locally:
+The workflow sets `BASE_PATH=/<repo-name>/` automatically. For local testing:
 
 ```bash
 BASE_PATH=/yogodemo/ npm run build
 BASE_PATH=/yogodemo/ npm run preview
 ```
-
-## Commands
-
-| Command | Action |
-|---------|--------|
-| `npm install` | Install dependencies |
-| `npm run dev` | Start dev server at `localhost:4321` |
-| `npm run build` | Build production site to `./dist/` |
-| `npm run preview` | Preview production build locally |
-| `npm run ingest` | Re-run content ingestion script |
 
 ## Tech Stack
 

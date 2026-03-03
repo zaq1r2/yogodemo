@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../../version-b/layouts/BaseLayout.astro';
+import EyebrowLabel from '../../../version-b/components/EyebrowLabel.astro';
+import BackLink from '../../../version-b/components/BackLink.astro';
+import Button from '../../../version-b/components/Button.astro';
+import Section from '../../../version-b/components/Section.astro';
+
+const base = import.meta.env.BASE_URL;
+const vb = `${base}version-b/`;
+---
+
+<BaseLayout title="Work with Christine" description="Private yoga sessions, group classes, and corporate programs with Christine Burke.">
+  <Section>
+    <BackLink href={vb} />
+    <EyebrowLabel text="Work with Christine" class="mb-space-2" />
+    <h1 class="mb-space-4">How to Practice<br />with Christine</h1>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <!-- Private Sessions -->
+  <Section id="private">
+    <EyebrowLabel text="Private Sessions" class="mb-space-2" />
+    <h2 class="mb-4">A Holistic & Transformative Approach</h2>
+    <div class="space-y-4 text-muted max-w-[60ch]">
+      <p>
+        Working privately with Christine is not your typical yoga private. Though you can certainly request sessions focused on fine tuning your physical practice, learning the basics of breath and meditation, and creating a solid foundation — her specialty is a very holistic and transformative approach.
+      </p>
+      <p>
+        Together you will explore the vision you hold for yourself and your life, present and future, and use the tools and philosophy of the practice to access greater health, clarity, vitality and light. This can be a truly enlightening experience that touches every aspect of your life.
+      </p>
+    </div>
+    <div class="mt-space-3">
+      <h3 class="mb-2">Teen Yoga: Life Skills 101</h3>
+      <p class="text-muted max-w-[60ch]">
+        Christine uses the art and science of yoga in a targeted way to help teens manage stress, improve body image and experience greater self acceptance and self love through healthy self care habits.
+      </p>
+    </div>
+    <div class="mt-space-3">
+      <Button href={`${vb}contact/`} variant="outline">Book a Session</Button>
+    </div>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <!-- Classes -->
+  <Section id="classes">
+    <EyebrowLabel text="Classes" class="mb-space-2" />
+    <h2 class="mb-space-3">Group Classes</h2>
+
+    <div class="divide-y divide-border">
+      <div class="py-5 first:pt-0">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+          <span class="font-medium">Morning Magic (Level 1-2)</span>
+          <span class="text-sm text-muted">Tue & Thu · 8:30 AM</span>
+        </div>
+        <p class="text-sm text-muted mt-1.5 max-w-[55ch]">
+          Dynamic but moderate paced — breath, meditation, intention setting. Easy on joints while building strength, flexibility and focus.
+        </p>
+      </div>
+      <div class="py-5">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+          <span class="font-medium">Spirit Flow (Mixed Level)</span>
+          <span class="text-sm text-muted">Tue · 6:30 PM</span>
+        </div>
+        <p class="text-sm text-muted mt-1.5 max-w-[55ch]">
+          The perfect transition from day to night. Release tension, detoxify mind and body, relax the nervous system.
+        </p>
+      </div>
+      <div class="py-5">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+          <span class="font-medium">Candlelight Energy Flow (Level 2)</span>
+          <span class="text-sm text-muted">Sun · 6:30–8:00 PM</span>
+        </div>
+        <p class="text-sm text-muted mt-1.5 max-w-[55ch]">
+          Award-winning Vinyasa Flow set to music and candlelight. Breath work, meditation, and inspiration for the week ahead. Each class centers around the "chakra of the week."
+        </p>
+      </div>
+    </div>
+
+    <p class="text-sm text-muted mt-space-3">
+      Available via Zoom and pop-up locations.
+      <a href={`${vb}contact/`} class="hover-underline text-fg">Contact Christine</a> for the current schedule.
+    </p>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <!-- Corporate -->
+  <Section id="corporate">
+    <EyebrowLabel text="Corporate & Schools" class="mb-space-2" />
+    <h2 class="mb-4">Wellness Programs</h2>
+    <p class="text-muted max-w-[60ch] mb-4">
+      Christine has been the mindfulness and yoga teacher at Marlborough School since 2012 and served as yoga consultant for Eddie Bauer. Custom programs for groups of all sizes — stress management, breathwork, mindfulness, and wellness education.
+    </p>
+    <Button href={`${vb}contact/`} variant="text">Inquire about programs &rarr;</Button>
+  </Section>
+</BaseLayout>

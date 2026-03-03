@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../../version-b/layouts/BaseLayout.astro';
+import EyebrowLabel from '../../../version-b/components/EyebrowLabel.astro';
+import BackLink from '../../../version-b/components/BackLink.astro';
+import Button from '../../../version-b/components/Button.astro';
+import Section from '../../../version-b/components/Section.astro';
+import books from '../../../content/books.json';
+import press from '../../../content/press.json';
+
+const base = import.meta.env.BASE_URL;
+const vb = `${base}version-b/`;
+---
+
+<BaseLayout title="Books & Press" description="Christine Burke's published books and press mentions.">
+  <Section>
+    <BackLink href={vb} />
+    <EyebrowLabel text="Books & Press" class="mb-space-2" />
+    <h1 class="mb-space-4">Published Works<br />&amp; Media</h1>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <!-- Books -->
+  {books.map((book, i) => (
+    <>
+      <Section>
+        <div class="grid md:grid-cols-[auto_1fr] gap-space-4 items-start">
+          <img
+            src={`${base}${book.image.replace(/^\//, '')}`}
+            alt={book.title}
+            class="w-36 md:w-44 aspect-[3/4] object-cover"
+            loading="lazy"
+          />
+          <div>
+            <h2 class="mb-1">{book.title}</h2>
+            <p class="text-sm text-muted mb-4">{book.subtitle}</p>
+            <p class="text-muted max-w-[50ch] mb-space-3">{book.description}</p>
+            <Button href={book.buyUrl} variant="outline">Buy on Amazon</Button>
+          </div>
+        </div>
+      </Section>
+      {i < books.length - 1 && <hr class="rule content-col" />}
+    </>
+  ))}
+
+  <hr class="rule content-col" />
+
+  <!-- Review -->
+  <Section>
+    <blockquote class="max-w-[55ch]">
+      <p class="italic text-muted mb-4">
+        "This book is well laid out and easy to read — accessible enough for beginners, yet deep enough to engage seasoned yogis. Christine Burke's heartfelt and authentic approach shines through. She clearly dances with love, dedication and grace — the life force energy practically zings off the pages!"
+      </p>
+      <cite class="text-sm not-italic">— Book Review, The Yoga Healer</cite>
+    </blockquote>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <!-- Press -->
+  <Section>
+    <EyebrowLabel text="Press & Media" class="mb-space-3" />
+    <div class="divide-y divide-border">
+      {press.map((item) => (
+        <div class="py-5 first:pt-0 grid md:grid-cols-[auto_1fr] gap-4 items-start">
+          <img
+            src={`${base}${item.image.replace(/^\//, '')}`}
+            alt={item.title}
+            class="w-24 md:w-28 aspect-[3/2] object-cover"
+            loading="lazy"
+          />
+          <div>
+            <p class="text-xs text-muted uppercase tracking-widest mb-1">{item.publication}</p>
+            <h3 class="mb-1">{item.title}</h3>
+            <p class="text-sm text-muted">{item.description}</p>
+            <p class="text-xs text-muted mt-2">{item.date}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Book page image -->
+  <Section>
+    <img
+      src={`${base}assets/ingested/book-page.jpg`}
+      alt="Book interior page spread"
+      class="w-full"
+      loading="lazy"
+    />
+    <blockquote class="mt-space-3 max-w-[55ch]">
+      <p class="italic text-muted text-sm mb-2">
+        "Christine's voice, enthusiasm, and knowledge is contagious. When reading these pages, you'll feel as though you are practicing with her."
+      </p>
+      <cite class="text-xs not-italic text-muted">— Kathleen Ross-Allee, C-IAYT</cite>
+    </blockquote>
+  </Section>
+</BaseLayout>

@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../../version-b/layouts/BaseLayout.astro';
+import EyebrowLabel from '../../../version-b/components/EyebrowLabel.astro';
+import BackLink from '../../../version-b/components/BackLink.astro';
+import Button from '../../../version-b/components/Button.astro';
+import Section from '../../../version-b/components/Section.astro';
+import programs from '../../../content/programs.json';
+
+const base = import.meta.env.BASE_URL;
+const vb = `${base}version-b/`;
+---
+
+<BaseLayout title="Programs" description="Christine Burke's yoga programs: Spiritual Mental Health Diet, Teacher Training, Retreats.">
+  <Section>
+    <BackLink href={vb} />
+    <EyebrowLabel text="Programs" class="mb-space-2" />
+    <h1 class="mb-space-4">Deepen Your Practice</h1>
+    <p class="text-muted max-w-[55ch]">
+      Transformative programs and immersive experiences designed to support mental, physical, and spiritual growth.
+    </p>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  {programs.map((program, i) => (
+    <>
+      <Section id={program.id}>
+        <EyebrowLabel text={program.subtitle} class="mb-space-2" />
+        <h2 class="mb-4">{program.title}</h2>
+        <p class="text-muted max-w-[60ch] mb-space-3">{program.description}</p>
+        <ul class="space-y-1.5 mb-space-3 max-w-[55ch]">
+          {(program.features as string[]).map((f: string) => (
+            <li class="text-sm text-muted flex items-start gap-2">
+              <span class="text-border mt-1.5 text-xs">—</span>
+              {f}
+            </li>
+          ))}
+        </ul>
+        <Button
+          href={program.ctaUrl.startsWith('/') ? `${vb}${program.ctaUrl.replace(/^\//, '')}` : program.ctaUrl}
+          variant="outline"
+        >
+          {program.cta}
+        </Button>
+      </Section>
+      {i < programs.length - 1 && <hr class="rule content-col" />}
+    </>
+  ))}
+
+  <hr class="rule content-col" />
+
+  <!-- Testimonials -->
+  <Section>
+    <EyebrowLabel text="What Students Say" class="mb-space-3" />
+    <div class="space-y-space-4">
+      <blockquote class="max-w-[55ch]">
+        <p class="italic text-muted mb-2">
+          "Christine really has changed my life. She has given me tools to center myself, relax and live a life full of happiness. The practices are not only easy but they WORK."
+        </p>
+        <cite class="text-sm not-italic">— Jessica B.</cite>
+      </blockquote>
+      <blockquote class="max-w-[55ch]">
+        <p class="italic text-muted mb-2">
+          "Christine's program and guidance are priceless. She helped move me from everyday survival stress to a calmer, happier and more grounded place."
+        </p>
+        <cite class="text-sm not-italic">— Jenny Eakes, 2019</cite>
+      </blockquote>
+      <blockquote class="max-w-[55ch]">
+        <p class="italic text-muted mb-2">
+          "The Spiritual Mental Health Diet has taught me the value in releasing negative thoughts that cause limitations. The program has truly fulfilled and inspired me."
+        </p>
+        <cite class="text-sm not-italic">— Karen M., 2019</cite>
+      </blockquote>
+    </div>
+  </Section>
+
+  <div class="content-col pb-4">
+    <p class="text-xs text-muted">
+      Source: <a href="https://www.christineburkeyoga.com/online-course" class="hover-underline" target="_blank" rel="noopener">christineburkeyoga.com</a>
+    </p>
+  </div>
+</BaseLayout>

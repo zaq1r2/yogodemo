@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../../version-b/layouts/BaseLayout.astro';
+import EyebrowLabel from '../../../version-b/components/EyebrowLabel.astro';
+import BackLink from '../../../version-b/components/BackLink.astro';
+import Button from '../../../version-b/components/Button.astro';
+import Section from '../../../version-b/components/Section.astro';
+
+const base = import.meta.env.BASE_URL;
+const vb = `${base}version-b/`;
+---
+
+<BaseLayout title="Liberation Yoga (Legacy)" description="The story of Liberation Yoga — Los Angeles yoga studio, 2004-2021.">
+  <Section>
+    <BackLink href={`${vb}about/`} label="About" />
+    <EyebrowLabel text="Legacy" class="mb-space-2" />
+    <h1 class="mb-4">Liberation Yoga</h1>
+    <p class="text-muted">Los Angeles · 2004 – 2021</p>
+  </Section>
+
+  <!-- Studio note -->
+  <div class="content-col py-4">
+    <div class="border border-border px-5 py-4">
+      <p class="text-sm text-muted">
+        <strong class="text-fg">Note:</strong> Liberation Yoga's brick-and-mortar studio closed in October 2021. Christine continues to offer classes, workshops, retreats, and teacher training.
+        <a href={`${vb}work-with-christine/`} class="hover-underline text-fg">Current offerings &rarr;</a>
+      </p>
+    </div>
+  </div>
+
+  <hr class="rule content-col" />
+
+  <Section>
+    <EyebrowLabel text="The Story" class="mb-space-2" />
+    <div class="space-y-4 text-muted max-w-[60ch]">
+      <p>
+        Liberation Yoga is a Hatha-based yoga studio in mid-city Los Angeles founded in 2004 by Christine Burke and Gary McCleery. They wanted to build a community and place to make peace with your body, mind, and the world — to find Liberation.
+      </p>
+      <p>
+        They sought an alternative to the corporate yoga vibe and mentality that was fast uprooting independent studios in Los Angeles and beyond. Liberation Yoga is about living authentically — finding one's true nature through the practice of yoga and sharing this limitless life force with the world.
+      </p>
+      <p>
+        At Liberation we celebrate all styles of Hatha Yoga and all levels of practitioners, recognizing that every individual has a unique path to follow and every teacher has a unique gift to offer. Yoga seeks to create union, relieve suffering and thereby liberate the soul during this lifetime.
+      </p>
+    </div>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <!-- What Made It Special -->
+  <Section>
+    <EyebrowLabel text="What Made It Special" class="mb-space-3" />
+    <div class="space-y-4 text-muted max-w-[60ch] mb-space-4">
+      <p>
+        The asana room was warm and bright, filled with natural light and an indoor garden resting upon rich, eco-conscious wood floors. Walking into Liberation was like walking into a spacious living room with twinkling star lights that provide a safe, magical environment in which to explore the vast regions of the interior mind, body, and spirit.
+      </p>
+      <p>
+        Every item sold came from a company that shares the values and ethos of yoga — fairly traded, kind to the environment, giving back to a cause, and/or handmade by the Liberation Yoga community.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 max-w-lg mb-space-4">
+      <img src={`${base}assets/ingested/liberation-studio-1.jpg`} alt="Liberation Yoga studio" class="w-full aspect-square object-cover" loading="lazy" />
+      <img src={`${base}assets/ingested/liberation-class.jpg`} alt="Yoga class" class="w-full aspect-square object-cover" loading="lazy" />
+      <img src={`${base}assets/ingested/liberation-front.jpg`} alt="Studio front" class="w-full aspect-square object-cover" loading="lazy" />
+      <img src={`${base}assets/ingested/liberation-fullsize.jpg`} alt="Liberation Yoga" class="w-full aspect-square object-cover" loading="lazy" />
+    </div>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <!-- Values -->
+  <Section>
+    <EyebrowLabel text="Dedicated To" class="mb-space-3" />
+    <div class="divide-y divide-border max-w-[55ch]">
+      <div class="py-4 first:pt-0">
+        <span class="font-medium">Health</span>
+        <p class="text-sm text-muted mt-1">Soundness of body and mind; freedom from physical or mental disease; a condition of well being.</p>
+      </div>
+      <div class="py-4">
+        <span class="font-medium">Peace</span>
+        <p class="text-sm text-muted mt-1">Inner contentment, serenity; peace of mind; the absence of hostilities.</p>
+      </div>
+      <div class="py-4">
+        <span class="font-medium">Freedom</span>
+        <p class="text-sm text-muted mt-1">The condition of being free from constraints; ease and facility of movement.</p>
+      </div>
+      <div class="py-4">
+        <span class="font-medium">Community</span>
+        <p class="text-sm text-muted mt-1">Sharing, participation, fellowship.</p>
+      </div>
+    </div>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <!-- Quote -->
+  <Section>
+    <blockquote class="max-w-[55ch]">
+      <p class="italic text-muted mb-4">
+        "Brick and mortar family business has always been a passion of ours. Creating communal gathering space that supports the individual and the whole has been our dharmic path and greatest blessing and honor. A family business — and you are our family — always."
+      </p>
+      <p class="italic text-muted mb-4">
+        "So much of the yoga happens in the letting go and so much of the practice is the preparation for the courage to imagine new frontiers."
+      </p>
+      <cite class="text-sm not-italic">— Christine Burke</cite>
+    </blockquote>
+    <p class="text-sm text-muted italic mt-space-4">
+      Moksha (Liberation): The transcendent state attained as a result of being released from the cycle of rebirth. Freedom and Liberation.
+    </p>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <Section>
+    <p class="text-muted mb-space-3">The spirit continues through Christine's teaching, books, and community.</p>
+    <div class="flex gap-6">
+      <Button href={`${vb}work-with-christine/`} variant="outline">Work with Christine</Button>
+      <Button href={`${vb}events/`} variant="text">Events &rarr;</Button>
+    </div>
+  </Section>
+
+  <div class="content-col pb-4">
+    <p class="text-xs text-muted">
+      Source: <a href="https://www.liberationyoga.com/our-story" class="hover-underline" target="_blank" rel="noopener">liberationyoga.com</a>
+    </p>
+  </div>
+</BaseLayout>

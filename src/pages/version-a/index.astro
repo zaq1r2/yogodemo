@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../../version-a/layouts/BaseLayout.astro';
+import site from '../../content/site.json';
+import events from '../../content/events.json';
+import books from '../../content/books.json';
+
+const base = import.meta.env.BASE_URL;
+const now = new Date().toISOString().split('T')[0];
+const upcoming = events
+  .filter((e) => e.date >= now)
+  .sort((a, b) => a.date.localeCompare(b.date))
+  .slice(0, 3);
+
+const workCards = [
+  {
+    title: 'Private Sessions',
+    description: 'A holistic and transformative approach exploring your personal vision using yoga philosophy for greater health, clarity, vitality, and light.',
+    cta: 'Learn More',
+    href: `${base}version-a/work-with-christine/`,
+    image: `${base}assets/ingested/christine-portrait.jpg`,
+  },
+  {
+    title: 'Classes & Workshops',
+    description: 'Group classes combining breath, meditation, and mindful movement. From dynamic Morning Magic to candlelit evening flows.',
+    cta: 'View Schedule',
+    href: `${base}version-a/work-with-christine/`,
+    image: `${base}assets/ingested/christine-teaching.jpg`,
+  },
+  {
+    title: 'Teacher Training',
+    description: 'A 200-hour certification program covering philosophy, breath, sequencing, anatomy, therapeutics, and the art of teaching.',
+    cta: 'Explore Training',
+    href: `${base}version-a/programs/`,
+    image: `${base}assets/ingested/liberation-studio-1.jpg`,
+  },
+];
+---
+
+<BaseLayout title="Home" description="Christine Burke Yoga — Yoga, Breathwork & Holistic Wellness. Private sessions, classes, teacher training, retreats & more.">
+  <!-- Hero -->
+  <section class="relative bg-brand-50 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-brand-900 leading-tight">
+            Yoga, Breathwork &<br />
+            <span class="text-sage-600">Holistic Wellness</span>
+          </h1>
+          <p class="mt-6 text-lg text-gray-600 leading-relaxed max-w-xl">
+            Through the healing and transformation that a yoga practice provides, each individual comes to experience the magical and beautiful nature of their true selves and comes to know that its foundation is love and peace.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href={`${base}version-a/work-with-christine/`} class="px-8 py-3.5 bg-sage-600 hover:bg-sage-700 text-white font-semibold rounded-full shadow-lg shadow-sage-600/25 transition-all hover:shadow-xl">
+              {site.cta.primary}
+            </a>
+            <a href={`${base}version-a/programs/`} class="px-8 py-3.5 bg-white hover:bg-brand-50 text-brand-800 font-semibold rounded-full border border-brand-200 transition-colors">
+              {site.cta.secondary}
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <img
+            src={`${base}assets/ingested/christine-1.jpg`}
+            alt="Christine Burke"
+            class="rounded-2xl shadow-2xl w-full max-w-lg mx-auto object-cover aspect-square"
+            loading="eager"
+          />
+          <div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 hidden lg:block">
+            <p class="text-sm font-semibold text-brand-800">25+ Years Teaching</p>
+            <p class="text-xs text-gray-500">E-RYT 500+ Certified</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work with Christine - 3 Cards -->
+  <section class="py-20 bg-white" aria-labelledby="work-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 id="work-heading" class="text-3xl sm:text-4xl font-serif font-bold text-brand-900">Work with Christine</h2>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Discover the offering that resonates with you</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {workCards.map((card) => (
+          <article class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src={card.image} alt={card.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-serif font-bold text-brand-800 mb-2">{card.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">{card.description}</p>
+              <a href={card.href} class="text-sage-600 hover:text-sage-700 font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                {card.cta}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  {upcoming.length > 0 && (
+    <section class="py-20 bg-brand-50" aria-labelledby="upcoming-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between mb-12">
+          <div>
+            <h2 id="upcoming-heading" class="text-3xl sm:text-4xl font-serif font-bold text-brand-900">Upcoming</h2>
+            <p class="mt-2 text-gray-600">Join Christine for these upcoming offerings</p>
+          </div>
+          <a href={`${base}version-a/events/`} class="hidden sm:inline-flex text-sage-600 hover:text-sage-700 font-semibold text-sm items-center gap-1">
+            View All Events
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {upcoming.map((event) => {
+            const d = new Date(event.date + 'T00:00:00');
+            return (
+              <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+                <div class="flex items-start gap-4">
+                  <div class="flex-shrink-0 text-center bg-sage-50 rounded-xl px-3 py-2 min-w-[60px]">
+                    <span class="block text-xs font-semibold text-sage-600 uppercase">{d.toLocaleDateString('en-US', { month: 'short' })}</span>
+                    <span class="block text-2xl font-bold text-sage-800">{d.getDate()}</span>
+                  </div>
+                  <div>
+                    <span class="inline-block text-xs font-medium text-brand-600 bg-brand-50 px-2 py-0.5 rounded-full mb-2 capitalize">{event.type}</span>
+                    <h3 class="font-serif font-bold text-brand-800 mb-1">{event.title}</h3>
+                    <p class="text-sm text-gray-500">{event.location}</p>
+                    <p class="text-sm text-gray-600 mt-2 line-clamp-2">{event.description}</p>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+        <div class="mt-8 text-center sm:hidden">
+          <a href={`${base}version-a/events/`} class="text-sage-600 hover:text-sage-700 font-semibold">View All Events &rarr;</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Books Strip -->
+  <section class="py-20 bg-white" aria-labelledby="books-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 id="books-heading" class="text-3xl sm:text-4xl font-serif font-bold text-brand-900">Published Works</h2>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Explore Christine's books on yoga, breathwork, and holistic wellness</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-8">
+        {books.map((book) => (
+          <div class="text-center group">
+            <div class="mx-auto w-48 h-60 rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
+              <img src={`${base}${book.image.replace(/^\//, '')}`} alt={book.title} class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <h3 class="mt-4 font-serif font-bold text-brand-800">{book.title}</h3>
+            <p class="text-sm text-gray-500 mt-1">{book.subtitle}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href={`${base}version-a/books-press/`} class="px-6 py-3 bg-brand-100 hover:bg-brand-200 text-brand-800 font-semibold rounded-full transition-colors">
+          View All Books & Press
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility -->
+  <section class="py-16 bg-sage-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-3 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-serif font-bold text-sage-700">25+</p>
+          <p class="text-sm text-gray-600 mt-1">Years of Teaching</p>
+        </div>
+        <div>
+          <p class="text-3xl font-serif font-bold text-sage-700">E-RYT 500+</p>
+          <p class="text-sm text-gray-600 mt-1">Yoga Alliance Certified</p>
+        </div>
+        <div>
+          <p class="text-3xl font-serif font-bold text-sage-700">3 Books</p>
+          <p class="text-sm text-gray-600 mt-1">Published Author</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Short About -->
+  <section class="py-20 bg-white" aria-labelledby="about-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <img
+          src={`${base}assets/ingested/christine-2.jpg`}
+          alt="Christine Burke teaching"
+          class="rounded-2xl shadow-lg w-full max-w-md mx-auto object-cover aspect-square"
+          loading="lazy"
+        />
+        <div>
+          <h2 id="about-heading" class="text-3xl sm:text-4xl font-serif font-bold text-brand-900 mb-6">About Christine</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Christine is the co-owner of Liberation Yoga and author of <em>The Yoga Healer</em>. Throughout her life she has been searching, and has always felt most comfortable, when asking the big questions of life while fully immersed in the small moments of existence.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            She is an E-RYT with Yoga Alliance at the 500-hour+ level with thousands of hours of teaching and training teachers. Her style draws from the ancient traditions and modern sages of our time and incorporates elements of classic Hatha style, Vinyasa Flow, Iyengar, and Kundalini.
+          </p>
+          <a href={`${base}version-a/about/`} class="text-sage-600 hover:text-sage-700 font-semibold inline-flex items-center gap-1">
+            Read Full Bio
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="py-20 bg-brand-800 text-white" aria-labelledby="newsletter-heading">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 id="newsletter-heading" class="text-3xl font-serif font-bold mb-4">Stay in Your Light</h2>
+      <p class="text-brand-200 mb-8 max-w-lg mx-auto">
+        Join the community newsletter for class updates, wellness tips, exclusive content, and information about upcoming events and retreats.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="flex-1 px-5 py-3 rounded-full bg-brand-700 border border-brand-600 text-white placeholder-brand-400 focus:outline-none focus:ring-2 focus:ring-sage-400"
+          disabled
+          aria-label="Email address (placeholder)"
+        />
+        <button class="px-6 py-3 bg-sage-600 hover:bg-sage-500 font-semibold rounded-full transition-colors" disabled>
+          Subscribe
+        </button>
+      </div>
+      <p class="text-brand-400 text-xs mt-3">Newsletter signup coming soon</p>
+    </div>
+  </section>
+</BaseLayout>

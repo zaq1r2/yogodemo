@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../../version-b/layouts/BaseLayout.astro';
+import EyebrowLabel from '../../../version-b/components/EyebrowLabel.astro';
+import BackLink from '../../../version-b/components/BackLink.astro';
+import Button from '../../../version-b/components/Button.astro';
+import Section from '../../../version-b/components/Section.astro';
+
+const base = import.meta.env.BASE_URL;
+const vb = `${base}version-b/`;
+---
+
+<BaseLayout title="About" description="Christine Burke — yoga teacher, author, wellness educator. 25+ years of experience.">
+  <Section>
+    <BackLink href={vb} />
+    <EyebrowLabel text="About" class="mb-space-2" />
+    <h1 class="mb-space-4">Christine Burke</h1>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <Section>
+    <div class="grid md:grid-cols-[1fr_auto] gap-space-4 items-start">
+      <div class="space-y-4 text-muted max-w-[60ch]">
+        <p>
+          Christine is the co-owner of Liberation Yoga and author of <em class="text-fg">The Yoga Healer</em> (winner of "Best Yoga Book of The Year 2018" by Soul and Spirit Magazine). Throughout her life she has been searching, and has always felt most comfortable, when asking the big questions of life while fully immersed in the small moments of existence.
+        </p>
+        <p>
+          Yoga is a practice that allows her to live life as a quest, a magical journey — and the gift of sharing that with others is Christine's eternal good fortune.
+        </p>
+      </div>
+      <img
+        src={`${base}assets/ingested/christine-1.jpg`}
+        alt="Christine Burke"
+        class="w-48 md:w-56 aspect-square object-cover"
+        loading="eager"
+      />
+    </div>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <Section>
+    <EyebrowLabel text="Credentials" class="mb-space-2" />
+    <div class="space-y-4 text-muted max-w-[60ch]">
+      <p>
+        She is an E-RYT with Yoga Alliance at the 500-hour+ level with thousands of hours of teaching and training teachers. Christine's students range in age from womb to 93. Her writing has been featured in LA Yoga Magazine, Yogi Times, and more. Her teaching has been featured in the LA Times, Westways Magazine, LA Weekly, and on the program "Great Yoga Teachers."
+      </p>
+      <p>
+        Christine and husband Gary McCleery opened Liberation Yoga in 2004 and since then it has been awarded multiple times including "Top 20 Yoga Studios In The World" by Travel and Leisure Magazine, "Top 10 Most Beautiful Studios In The U.S." by Tripping.com, and "Best Yoga Studio in Los Angeles" by LA Weekly.
+      </p>
+    </div>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <Section>
+    <EyebrowLabel text="Approach" class="mb-space-2" />
+    <div class="grid md:grid-cols-[auto_1fr] gap-space-4 items-start">
+      <img
+        src={`${base}assets/ingested/christine-teaching.jpg`}
+        alt="Christine teaching"
+        class="w-full md:w-64 aspect-[4/3] object-cover"
+        loading="lazy"
+      />
+      <div class="space-y-4 text-muted">
+        <p>
+          Christine believes that through the healing and transformation that a yoga practice provides, each individual comes to experience the magical and beautiful nature of their true selves and comes to know that its foundation is love and peace.
+        </p>
+        <p>
+          Her style draws from the ancient traditions and modern sages of our time — classic Hatha, Vinyasa Flow, Iyengar, and Kundalini. She pays homage to the glorious practice of yoga that has been lovingly handed down from teacher to student for thousands of years.
+        </p>
+        <p class="italic text-sm">
+          Lokah Samastha Sukhino Bhavantu<br />
+          <span class="text-xs">"May all beings everywhere be happy and free"</span>
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <!-- Awards -->
+  <Section>
+    <EyebrowLabel text="Recognition" class="mb-space-3" />
+    <div class="divide-y divide-border">
+      <div class="py-4 first:pt-0 flex justify-between items-baseline">
+        <span class="font-medium">"Top 20 Yoga Studios In The World"</span>
+        <span class="text-sm text-muted">Travel + Leisure</span>
+      </div>
+      <div class="py-4 flex justify-between items-baseline">
+        <span class="font-medium">"Most Beautiful Yoga Studio"</span>
+        <span class="text-sm text-muted">Hoodline · Tripping.com</span>
+      </div>
+      <div class="py-4 flex justify-between items-baseline">
+        <span class="font-medium">"Best Yoga Studio in Los Angeles"</span>
+        <span class="text-sm text-muted">LA Weekly (twice)</span>
+      </div>
+      <div class="py-4 flex justify-between items-baseline">
+        <span class="font-medium">"Best Yoga Book 2018"</span>
+        <span class="text-sm text-muted">Soul & Spirit Magazine</span>
+      </div>
+    </div>
+  </Section>
+
+  <hr class="rule content-col" />
+
+  <Section>
+    <p class="text-muted mb-space-3">Learn about the studio Christine and Gary built over nearly two decades.</p>
+    <Button href={`${vb}liberation-yoga/`} variant="text">Liberation Yoga Legacy &rarr;</Button>
+  </Section>
+
+  <div class="content-col pb-4">
+    <p class="text-xs text-muted">
+      Source: <a href="https://www.christineburkeyoga.com/bio" class="hover-underline" target="_blank" rel="noopener">christineburkeyoga.com/bio</a>
+    </p>
+  </div>
+</BaseLayout>

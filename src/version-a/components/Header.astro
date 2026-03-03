@@ -1,14 +1,14 @@
 ---
-import site from '../content/site.json';
+import site from '../../content/site.json';
 const base = import.meta.env.BASE_URL;
 
 const navLinks = [
-  { label: 'Home', href: `${base}` },
-  { label: 'Work with Christine', href: `${base}work-with-christine/` },
-  { label: 'Programs', href: `${base}programs/` },
-  { label: 'Events', href: `${base}events/` },
-  { label: 'Books & Press', href: `${base}books-press/` },
-  { label: 'About', href: `${base}about/` },
+  { label: 'Home', href: `${base}version-a/` },
+  { label: 'Work with Christine', href: `${base}version-a/work-with-christine/` },
+  { label: 'Programs', href: `${base}version-a/programs/` },
+  { label: 'Events', href: `${base}version-a/events/` },
+  { label: 'Books & Press', href: `${base}version-a/books-press/` },
+  { label: 'About', href: `${base}version-a/about/` },
 ];
 ---
 
@@ -16,7 +16,7 @@ const navLinks = [
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
     <div class="flex items-center justify-between h-16 lg:h-20">
       <!-- Logo -->
-      <a href={`${base}`} class="flex items-center gap-2 group">
+      <a href={`${base}version-a/`} class="flex items-center gap-2 group">
         <span class="text-xl lg:text-2xl font-serif font-bold text-brand-800 group-hover:text-brand-600 transition-colors">
           Christine Burke Yoga
         </span>
@@ -33,7 +33,7 @@ const navLinks = [
           </a>
         ))}
         <a
-          href={`${base}contact/`}
+          href={`${base}version-a/contact/`}
           class="ml-3 px-5 py-2.5 text-sm font-semibold text-white bg-sage-600 hover:bg-sage-700 rounded-full transition-colors shadow-sm"
         >
           Contact
@@ -68,7 +68,7 @@ const navLinks = [
           </a>
         ))}
         <a
-          href={`${base}contact/`}
+          href={`${base}version-a/contact/`}
           class="mt-2 mx-4 px-5 py-3 text-center text-base font-semibold text-white bg-sage-600 hover:bg-sage-700 rounded-full transition-colors"
         >
           Contact
